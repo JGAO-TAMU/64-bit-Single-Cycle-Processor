@@ -1,0 +1,13 @@
+Opcode (11 bits),Instruction Type,reg2loc,alusrc,mem2reg,regwrite,memread,memwrite,branch,uncond_branch,aluop,signop,shamt,movz
+?0001010???,R-TYPE AND,0,0,0,1,0,0,0,0,0000,xx,00,0
+?0101010???,R-TYPE OR,0,0,0,1,0,0,0,0,0001,xx,00,0
+?0?01011???,R-TYPE ADD,0,0,0,1,0,0,0,0,0010,xx,00,0
+?1?01011???,R-TYPE SUB,0,0,0,1,0,0,0,0,0110,xx,00,0
+?1?10001???,I-TYPE SUB,0,1,0,1,0,0,0,0,0110,00,00,0
+?0?10001???,I-TYPE ADD,0,1,0,1,0,0,0,0,0010,00,00,0
+?011010????,CBZ,1,0,x,0,0,0,1,0,0111,11,00,0
+?00101?????,B,x,x,x,0,0,0,x,1,xxxx,10,00,0
+??111000010,LDUR,x,1,1,1,1,0,0,0,0010,01,00,0
+??111000000,STUR,1,1,x,0,0,1,0,0,0010,01,00,0
+110100101??,MOVZ,1,0,0,1,0,0,0,0,0111,xx,opcode[1:0],1
+Default,none of above,x,x,x,0,0,0,0,0,xxxx,xx,xx,x
