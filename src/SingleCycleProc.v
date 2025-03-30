@@ -15,7 +15,7 @@ module SingleCycleProc(
     wire [31:0] instruction;  // The current instruction
 
     // Parts of instruction
-    wire [4:0] rd;            // The destination register
+    wire [4:0] rd;            // destination register
     wire [4:0] rm;            // Operand 1
     wire [4:0] rn;            // Operand 2
     wire [10:0] opcode;
@@ -113,11 +113,6 @@ module SingleCycleProc(
         .shamt(shamt),
         .movz(movz)
     );
-
-    /*
-    * Connect the remaining datapath elements below.
-    * Do not forget any additional multiplexers that may be required.
-    */
     
     NextPClogic nextPCLogic ( 
         .CurrentPC(currentpc), //from PC Update Logic
