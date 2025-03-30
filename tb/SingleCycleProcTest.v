@@ -42,7 +42,7 @@ module SingleCycleProcTest_v;
     wire [63:0] dMemOut;
     wire [63:0] currentPC;
 
-    // Instantiate the Unit Under Test (UUT)
+    // Instantiate the Unit Under Test
     singlecycle uut (
         .CLK(CLK),
         .resetl(Reset_L),
@@ -95,13 +95,7 @@ module SingleCycleProcTest_v;
         end
         #(1 * `ClockPeriod);	// One more cycle to load the pass code from the DataMemory.
         passTest(dMemOut, 64'h123456789abcdef0, "Results of Program 2", passed);
-        // ***********************************************************
-        // Add your new tests here
-        // ***********************************************************
-
-        // Done
-        allPassed(passed, 2);   // Be sure to change the one to match
-                                // the number of tests you add.
+        allPassed(passed, 2);   
         $finish;
     end
 
@@ -109,7 +103,7 @@ module SingleCycleProcTest_v;
         CLK = 0;
     end
 
-    // The following is correct if clock starts at LOW level at StartTime //
+    // The following works if clock starts at LOW level at StartTime //
     always begin
         #`HalfClockPeriod CLK = ~CLK;
         #`HalfClockPeriod CLK = ~CLK;
