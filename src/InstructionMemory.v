@@ -1,10 +1,5 @@
 `timescale 1ns / 1ps
-/*
- * Module: InstructionMemory
- *
- * Implements read-only instruction memory
- * 
- */
+
 module InstructionMemory(Data, Address);
    parameter T_rd = 20;
    parameter MemSize = 40;
@@ -12,11 +7,6 @@ module InstructionMemory(Data, Address);
    output [31:0] Data;
    input [63:0]  Address;
    reg [31:0] 	 Data;
-   
-   /*
-    * ECEN 350 Processor Test Functions
-    * Texas A&M University
-    */
    
    always @ (Address) begin
       #4;
