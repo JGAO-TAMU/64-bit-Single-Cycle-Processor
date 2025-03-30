@@ -18,8 +18,6 @@ module control(
 always @(*)
 begin
     casez (opcode)
-
-        /* Add cases here for each instruction your processor supports */
         // R-TYPE AND
         11'b?0001010???: begin
             reg2loc       <= 1'b0; // Register to local
